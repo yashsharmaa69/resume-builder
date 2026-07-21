@@ -65,6 +65,16 @@ const Dashboard = () => {
     event.preventDefault();
     setIsLoading(true);
     try {
+      if (!resume) {
+        toast.error("Please select a PDF file first");
+        setIsLoading(false);
+        return;
+      }
+      if (resume.type !== "application/pdf") {
+        toast.error("Only PDF files are allowed");
+        setIsLoading(false);
+        return;
+      }
       const resumeText = await pdfToText(resume);
       const { data } = await api.post(
         "/api/ai/upload-resume",

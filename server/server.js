@@ -16,7 +16,9 @@ const PORT = process.env.PORT || 3000;
 //Database connection
 await connectDB();
 
-app.use(express.json());
+// app.use(express.json());
+app.use(express.json({ limit: "5mb" }));
+app.use(express.urlencoded({ limit: "5mb", extended: true }));
 app.use(cors());
 
 app.get("/", (req, res) => res.send("Server is live..."));
