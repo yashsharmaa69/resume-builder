@@ -28,7 +28,7 @@ Resume Builder is a full-stack web application for creating, editing, previewing
 ### 1. Clone the repository
 
 ```bash
-git clone [<your-github-repo-url>](https://github.com/yashsharmaa69/resume-builder.git)
+git clone [<https://github.com/yashsharmaa69/resume-builder.git>]
 cd resume-builder
 ```
 
